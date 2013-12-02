@@ -4,7 +4,7 @@ task
 Task manager: Keeps track of tasks, status, hours, people
 
 
-Task_DB.pdf (and Task_DB.docx) 
+http://www.coolthebeans.com/task/Task_DB.pdf
 - Contains the database layout and a brief description of some of the tables.
 - The table names are pretty much self-explanatory
 
