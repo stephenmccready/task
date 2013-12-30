@@ -13,6 +13,7 @@ Build_task_database.sql
 - These tables contain insert statements with dummy data. You should DEFINATLEY change the contents of the insert statements:
 		tbl_requested_by
 		tbl_assigned_to
+		tbl_user
 - You should review and change the generic values in the insert statements for the following tables to fit your needs:
 		tbl_importance
 		tbl_urgency
