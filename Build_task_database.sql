@@ -60,35 +60,56 @@ CREATE TABLE  `tbl_status_history` (
 PRIMARY KEY (  `status_history_id` )
 ) TYPE = MYISAM ;
 
+	
+CREATE TABLE  `tbl_user` (
+ `user_id` INT NOT NULL AUTO_INCREMENT ,
+ `user_nm` VarChar(64) NOT NULL ,
+ `user_email` VarChar(128) NOT NULL ,
+ `user_pwd` VarChar(255) NOT NULL ,
+ `super_user` TINYINT NOT NULL ,
+ `active` TINYINT NOT NULL ,
+ `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+PRIMARY KEY (  `user_id` )
+) TYPE = MYISAM 
+
+	INSERT INTO  `tbl_user` (  `user_nm`,  `user_email`,  `user_pwd`,  `super_user` ,  `active` ,  `timestamp` ) 
+	VALUES 
+	('Finn White',  'finn@mydomain.com', sha('password'), 1, 1, NOW( )), 
+	('Holly White',  'holly@mydomain.com', sha('password'), 1, 1, NOW( )), 
+	('Walter White',  'walter@mydomain.com', sha('password'), 1, 1, NOW( )),
+	('Gus Fring',  'gus@mydomain.com', sha('password'), 1, 1, NOW( )),
+	('Jesse Pinkman',  'jesse@mydomain.com', sha('password'), 1, 1, NOW( )),
+	('Skylar White',  'skylar@mydomain.com', sha('password'), 1, 1, NOW( ));
+
 
 CREATE TABLE  `tbl_requested_by` (
  `requested_by_id` INT NOT NULL AUTO_INCREMENT ,
- `requested_by_ud` VARCHAR( 64 ) NOT NULL ,
+ `user_id` INT NOT NULL ,
  `active` TINYINT NOT NULL ,
  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 PRIMARY KEY (  `requested_by_id` )
 ) TYPE = MYISAM 
 
-	INSERT INTO  `tbl_requested_by` (  `requested_by_ud`,  `active` ,  `timestamp` ) 
+	INSERT INTO  `tbl_requested_by` (  `user_id`, `active` ,  `timestamp` ) 
 	VALUES 
-	('Gus Fring',  1, NOW( )), 
-	('Jesse Pinkman',  1, NOW( )), 
-	('Skylar White',  1, NOW( ));
+	(1,  1, NOW( )), 
+	(2,  1, NOW( )), 
+	(3,  1, NOW( ));
 
 
 CREATE TABLE  `tbl_assigned_to` (
  `assigned_to_id` INT NOT NULL AUTO_INCREMENT ,
- `assigned_to_ud` VARCHAR( 64 ) NOT NULL ,
+ `user_id` INT NOT NULL ,
  `active` TINYINT NOT NULL ,
  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 PRIMARY KEY (  `assigned_to_id` )
 ) TYPE = MYISAM 
 
-	INSERT INTO  `tbl_assigned_to` (  `assigned_to_ud`,  `active` ,  `timestamp` ) 
+	INSERT INTO  `tbl_assigned_to` (  `user_id`, `active` ,  `timestamp` ) 
 	VALUES 
-	('Finn',  1, NOW( )), 
-	('Holly White',  1, NOW( )), 
-	('Walter White',  1, NOW( ));
+	(4,  1, NOW( )), 
+	(5,  1, NOW( )), 
+	(6,  1, NOW( ));
 	
 	
 CREATE TABLE  `tbl_importance` (
@@ -187,4 +208,3 @@ PRIMARY KEY (  `task_type_id` )
 	('2',  'Enhancement',  '200', NOW( )), 
 	('3',  'New Application',  '300', NOW( )), 
 	('4',  'New Feature',  '400', NOW( ));
-	
