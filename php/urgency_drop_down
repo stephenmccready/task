@@ -1,0 +1,11 @@
+<?php
+
+$info_array=$task_database->getUrgency();
+
+foreach ($info_array as $record)
+{
+	$selected="";
+	if($urgency_id==$record[0])
+	{	$selected=" selected=\"selected\" ";	}
+	echo "<option value=\"".$record[0]."\" ".$selected.">".$record[1]."</option>";
+}
