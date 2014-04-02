@@ -1,0 +1,156 @@
+/* --------- 1. defaults  --------- */
+* {margin:0; padding:0; font-family:"Helvetica", sans-serif; font-size:100%;}
+html {height: 100%;}
+body {height: 100%;}
+#divNav {display:none;}
+#divNewTask {clear:both; background-color:#CCFF99; padding-bottom:20px; padding-left:10px; padding-top:10px; display:none;}
+#divFilter {clear:both; padding-bottom:15px; padding-left:5px; padding-top:5px; background-color:#99CCFF; display:none;}
+#divSummaryHeader {display:none;}
+#divSummary {display:none;}
+#divTimeSummary {display:none;}
+#taskListContent {overflow:auto; height:32em; border-bottom: 1px solid #DCDCDC;}
+#hidden {display:none;}
+#divStatus {height: 100%; width:100%; position: absolute; text-align:center; background-color:#DCDCDC; padding-top:175px; opacity:0.75; filter:alpha(opacity=75); display:none;}
+#divHistory {height: 50%; width:50%; position: fixed; left:15%; top:15%; border:1px solid #696969; text-align:center; 
+			 background-color:#FFFFFF; display:none;}
+#divHistoryContainer {text-align:center;}
+#divHistoryHead {background-color:#DCDCDC; font-weight:bold; padding:8px; }
+#divHistoryHead1 {text-align:left; float:left; width:90%;}
+#divHistoryHead2 {text-align:right; float:right; width:5%;}
+#divHistoryHead3 {clear:both;}
+#divHistoryContents {clear:both; height:100%; border-top:1px solid #696969; background-color:#FFFFFF; text-align:left;
+					 padding:5px;}
+#divHistoryFooter {clear:both;}
+#divTimesheet {clear:both; padding-bottom:20px; padding-left:10px; padding-top:10px; display:none;}
+.divIndTimesheet {float:left; padding:5px; border:1px solid #A9A9A9; margin:5px;}
+.divHead {padding:10px;}
+
+.assigned {	background-color:#F5FFFA; padding:10px 5px 5px 5px;  margin:0px 0px 10px 0px; 
+			border:1px dotted #696969; font-size:85%; opacity:.95; filter:alpha(opacity=95);}
+
+#ui-datepicker-div {display:none;}
+
+/*  --------- 2. structure  --------- */
+
+/* ---------- 3. links and navigation ---------- */
+a {text-decoration:none; color:#008B8B;}
+a:hover {text-decoration:underline; color:#008B8B;}
+a:visited {text-decoration:none; color:#008B8B;}
+
+a.aNav {color:#4169E1; padding-left:10px; padding-right:10px; border-top:7px solid #bad3ea; font-size:75%;outline:0;}
+a.aNav:hover {color:#4169E1; text-decoration:none; border-top:7px solid #1a54e1; background-color:#D6ECF2;}
+
+.btn {text-decoration:none; border:1px solid #696969; background-color:#75EB00;	color:#000;
+		margin-left:0.5%; padding:3px; font-size:90%;display:none;}
+.btn:hover {text-decoration:none; background-color:#E6E6FA;}
+
+.btnDis {text-decoration:none; border:1px solid #696969; background-color:#DCDCDC; color:#696969;
+		margin-left:0.5%; padding:3px; font-size:90%;display:none;}
+.btnDis:hover {text-decoration:none;}
+
+.btnRemove {text-decoration:none; border:1px solid #696969; background-color:#FF8585; color:#000; padding:2px; font-size:90%;display:none;}
+.btnRemove:hover {text-decoration:none; background-color:#E6E6FA;}
+
+a.aX {border:1px solid #A9A9A9; background-color:#DCDCDC; font-family:sans-serif; color:#696969; text-decoration:none; outline:0;
+	 padding-left:5px; padding-right:5px; text-align:center; display:none;}
+a.aX:visited {text-decoration:none; color:#000000;}
+a.aX:hover {text-decoration:none; color:#000000; border:1px solid #000000; }
+
+/* ---------- 4. fonts ---------- */
+html {font-size:100%;}
+body {font-size:100%;}
+h1, h2, h3, h4, p, ul {}
+
+ul {}
+blockquote {}
+
+/* ---------- 5. images ---------- */
+a img {border:0;}
+a {cursor:pointer;}
+
+/* ---------- 6. tables ---------- */
+table {border-collapse:collapse; table-layout:fixed;}
+table caption {}
+table tr {}
+table tr.tr1 {}
+table tr.tr2 {background-color:#FFF8DC;}
+table td.tdCenter {	text-align:center;	}
+table td.tdTop {vertical-align:top;	}
+table td.tdTotal {	text-align:right;	font-weight:bold; margin-top:25px;	}
+table thead.theadHeaderFirst td {	text-align:center; font-weight:bold; color:#696969; background-color:#DCDCDC; }
+
+table.tabTask th {color:#003399; padding: 10px 15px 10px 15px; font-weight:normal; text-align:center;}
+table.tabTask td {border-top:1px solid #E8EDFF; padding: 10px 5px 10px 5px; color:#666699; }
+table.tabTask td.tdX {border-top:0px solid #000; padding: 0px 5px 5px 5px; color:#666699; }
+table.tabTask tr.trGrey {background-color:#DCDCDC; }
+
+table.tabTaskCompact th {color:#003399; padding: 5px 10px 5px 10px; font-weight:normal; text-align:center;}
+table.tabTaskCompact td {border-top:1px solid #E8EDFF; padding: 5px 2.5px 5px 2.5px; color:#666699; }
+table.tabTaskCompact td.tdX {border-top:0px solid #000; padding: 0px 2.5px 2.5px 2.5px; color:#666699; }
+table.tabTaskCompact tr.trGrey {background-color:#DCDCDC; }
+
+table.tabSmall th {color:#666699; padding: 1px 2px 1px 2px; font-weight:normal; }
+table.tabSmall td {border-top:1px solid #DCDCDC; padding: 2px 1px 2px 1px; color:#666699; }
+
+table.tabCalendar td {border-right:1px solid #DCDCDC; padding: 2px 3px 2px 3px; vertical-align:top;}
+table td.tdCal {border-right:1px solid #DCDCDC; padding: 2px 3px 2px 3px; width:5%; text-align:center;}
+table td.tdActive {background-color:#008000; font-weight:bold; color:#fff;}
+table td.tdInQueue {background-color:#DAA520; font-weight:bold; color:#fff;}
+table td.tdOnHold {background-color:#B22222; font-weight:bold; color:#fff;}
+table td.tdEntered {background-color:#A9A9A9; font-weight:bold; color:#fff;}
+table td.tdCompleted {background-color:#4B0082; font-weight:bold; color:#fff;}
+table td.tdCancelled {background-color:#000000; font-weight:bold; color:#fff;}
+
+table td.tdXActive {color:#008000; font-weight:bold;}
+table td.tdXInQueue {color:#DAA520; font-weight:bold;}
+table td.tdXOnHold {color:#B22222; font-weight:bold;}
+table td.tdXEntered {color:#A9A9A9; font-weight:bold;}
+table td.tdXCompleted {color:#4B0082; font-weight:bold;}
+table td.tdXCancelled {color:#000000; font-weight:bold;}
+
+/* ---------- 7. forms ---------- */	
+form {}
+
+fieldset {border:0px; display:inline; margin-left:0.5%;}
+label{display:block; margin-top:5px;}
+
+input {border:1px solid #696969; padding-left:2px; padding-right:2px; font-size:100%;}
+input:hover {}
+
+.sel  {border:1px solid #696969; padding-left:1px; width:100%;}
+.task_ud{width:75%; margin-right:.5%; font-size:110%;}
+.task_nm{width:85%; margin-right:.5%;}
+.task_desc{width:95%; margin-right:.5%;}
+.task_hours{width:25%; margin-right:.5%;}
+.task_date{width:70%; margin-right:.5%;}
+.add_task_hours{width:10%; margin-right:.5%;}
+.add_task_date{width:30%; margin-right:.5%;}
+.old_status {display:none;	}
+
+.grey {color:#696969;	}
+.smallGrey {font-size:80%; color:#696969;	}
+
+.Entered  {font-size:75%; color:#1E90FF;}
+.OnHold  {font-size:75%; color:#8B0000;}
+.InQueue  {font-size:75%; color:#DAA520;}
+.Active  {font-size:75%; color:#008000;}
+.Completed  {font-size:75%; color:#4B0082;}
+.Cancelled  {font-size:75%; color:#778899;}
+
+.hidden {display:none;}
+
+/* ---------- 8. For jQuery ------ */
+textarea { padding: .2em;}
+#txtComments {font-size:.8em;}
+
+fieldset { padding:0; border:0; margin-top:5px; font-size: .9em;display:none;}
+
+#dialog-form {font-size:.85em;display:none;}
+
+h1 { font-size: 1em; margin: .6em 0; }
+.ui-dialog .ui-state-error {display:none;}
+.validateTips { border: 1px solid transparent; font-size:.8em; text-align:left; color:red;display:none;}
+
+span.ui-button-text {padding:0em !important;display:none;}
+
+.button {cursor:pointer;display:none;}
